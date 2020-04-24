@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const morgan = require("morgan");
 const server = require("http").createServer(app);
+const fetch = require("node-fetch");
 
 // PG database client/connection setup
 const db = require("./db/index");
