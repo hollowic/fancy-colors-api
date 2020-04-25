@@ -1,0 +1,22 @@
+INSERT INTO tags
+    (name)
+VALUES
+    ('Winter'),
+    ('Spring'),
+    ('Summer'),
+    ('Autumn'),
+    ('Red'),
+    ('Orange'),
+    ('Brown'),
+    ('Yellow'),
+    ('Green'),
+    ('Turquoise'),
+    ('Blue'),
+    ('Violet'),
+    ('Pink'),
+    ('Grey'),
+    ('Warm'),
+    ('Cold'),
+    ('Dark'),
+    ('Bright'),
+    ('Gradient');
