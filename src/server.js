@@ -12,7 +12,6 @@ const db = require("./db/index");
 
 app.use(morgan("dev"));
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {

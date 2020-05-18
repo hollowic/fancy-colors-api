@@ -13,6 +13,7 @@ CREATE TABLE users
 (
     id SERIAL PRIMARY KEY NOT NULL,
     username VARCHAR(255) NOT NULL UNIQUE,
+    email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     profile_pic VARCHAR(255),
     created_at TIMESTAMP DEFAULT now(),
@@ -45,7 +46,7 @@ CREATE TABLE palettes
 
 CREATE TABLE tags_palettes
 (
+    id SERIAL PRIMARY KEY NOT NULL,
     tags_id INTEGER REFERENCES tags(id) ON DELETE CASCADE,
-    palettes_id INTEGER REFERENCES palettes(id) ON DELETE CASCADE,
-    CONSTRAINT tags_palettes_pkey PRIMARY KEY (tags_id, palettes_id)
+    palettes_id INTEGER REFERENCES palettes(id) ON DELETE CASCADE
 );
