@@ -6,6 +6,8 @@ DROP TABLE IF EXISTS palettes
 CASCADE;
 DROP TABLE IF EXISTS tags
 CASCADE;
+DROP TABLE IF EXISTS tags_palettes
+CASCADE;
 
 CREATE TABLE users
 (
@@ -38,6 +40,12 @@ CREATE TABLE palettes
     owner_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     label VARCHAR(255),
     colors VARCHAR(255),
-    created_at TIMESTAMP DEFAULT now(),
-    tags_id INTEGER REFERENCES tags(id) ON DELETE CASCADE
+    created_at TIMESTAMP DEFAULT now()
+);
+
+CREATE TABLE tags_palettes
+(
+    tags_id INTEGER REFERENCES tags(id) ON DELETE CASCADE,
+    palettes_id INTEGER REFERENCES palettes(id) ON DELETE CASCADE,
+    CONSTRAINT tags_palettes_pkey PRIMARY KEY (tags_id, palettes_id)
 );
